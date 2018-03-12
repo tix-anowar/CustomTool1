@@ -1,0 +1,39 @@
+2018-01-03T09:44:00.757Z - info: Initializing jsreport@1.9.2 in development mode using configuration file: none
+2018-01-03T09:44:00.758Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-01-03T09:44:00.776Z - info: Searching for available extensions in D:\imrul\codes\nodejs\bm_automation_tool\
+2018-01-03T09:44:00.788Z - info: Extensions location cache C:\Users\imrul\AppData\Local\Temp\jsreport\core\locations.json contains older information, crawling
+2018-01-03T09:44:06.353Z - info: Found 31 extensions
+2018-01-03T09:44:06.369Z - debug: Writing extension locations cache to C:\Users\imrul\AppData\Local\Temp\jsreport\core\locations.json
+2018-01-03T09:44:06.369Z - debug: Discovered 31 extensions
+2018-01-03T09:44:06.369Z - info: Using extension jsrender
+2018-01-03T09:44:06.369Z - info: Using extension fop-pdf
+2018-01-03T09:44:06.422Z - info: Using extension handlebars
+2018-01-03T09:44:06.422Z - info: Using extension templates
+2018-01-03T09:44:06.491Z - info: Using extension html-to-xlsx
+2018-01-03T09:44:06.623Z - info: Using extension data
+2018-01-03T09:44:06.686Z - info: Using extension phantom-pdf
+2018-01-03T09:44:06.939Z - info: Using extension text
+2018-01-03T09:44:06.939Z - info: Using extension assets
+2018-01-03T09:44:07.007Z - info: Using extension scripts
+2018-01-03T09:44:07.054Z - info: Using extension xlsx
+2018-01-03T09:44:07.871Z - info: Creating memory store
+2018-01-03T09:44:07.893Z - info: reporter initialized
+2018-01-03T09:44:07.893Z - info: Starting rendering request 1 (user: null) requestId=1
+2018-01-03T09:44:07.893Z - info: Rendering anonymous template { recipe:phantom-pdf,engine:handlebars} requestId=1
+2018-01-03T09:44:07.893Z - debug: Data item not defined for this template. requestId=1
+2018-01-03T09:44:07.893Z - debug: Rendering engine handlebars requestId=1
+2018-01-03T09:44:08.156Z - error: Error when processing render request Error during rendering report: Missing helper: "total" D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19
+      throw new _exception2['default']('Missing helper: "' + arguments[arguments.length - 1].name + '"');
+      ^
+
+Error: Missing helper: "total"
+    at Object.<anonymous> (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.eval (eval at createFunctionContext (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:254:23), <anonymous>:6:68)
+    at main (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\runtime.js:173:32)
+    at ret (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\runtime.js:176:12)
+    at ret (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:525:21)
+    at D:\imrul\codes\nodejs\bm_automation_tool\node_modules\jsreport-handlebars\lib\handlebarsEngine.js:25:14
+    at evalmachine.<anonymous>:1:41
+    at ContextifyScript.Script.runInContext (vm.js:35:29)
+    at ContextifyScript.Script.runInNewContext (vm.js:41:15)
+    at Object.runInNewContext (vm.js:93:38) requestId=1

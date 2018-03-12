@@ -1,0 +1,15 @@
+2018-01-03T09:44:08.156Z - error: Error when processing render request Error during rendering report: Missing helper: "total" D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19
+      throw new _exception2['default']('Missing helper: "' + arguments[arguments.length - 1].name + '"');
+      ^
+
+Error: Missing helper: "total"
+    at Object.<anonymous> (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.eval (eval at createFunctionContext (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:254:23), <anonymous>:6:68)
+    at main (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\runtime.js:173:32)
+    at ret (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\runtime.js:176:12)
+    at ret (D:\imrul\codes\nodejs\bm_automation_tool\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:525:21)
+    at D:\imrul\codes\nodejs\bm_automation_tool\node_modules\jsreport-handlebars\lib\handlebarsEngine.js:25:14
+    at evalmachine.<anonymous>:1:41
+    at ContextifyScript.Script.runInContext (vm.js:35:29)
+    at ContextifyScript.Script.runInNewContext (vm.js:41:15)
+    at Object.runInNewContext (vm.js:93:38) requestId=1

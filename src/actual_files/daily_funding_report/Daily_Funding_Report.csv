@@ -1,0 +1,5 @@
+Program ID,Invoice Number,Funder,Funded Date,Funded Currency,Funded Amount,Base Rate,Calculated Base Rate,Margin,Calculated Margin,Insurer Gross Fee,Insurer Net Fee,Insurer VAT/IPT,Servicer Gross Fee,Servicer Net Fee,Servicer VAT/IPT,Network Provider Gross Fee,Network Provider Net Fee,Network Provider VAT/IPT,Funding Days,Forecast Settlement Date, Total Funding Costs, Funding Payment
+1,INVUAT-F18,Standard Chartered Bank,2018-02-05T10:31:03.507Z,GBP,350000.00,100.00,95.89,50.00,47.95,311.50,278.12,33.38,78.05,65.04,13.01,46.90,39.08,7.82,10,2018-02-15T07:33:47.828Z, 580.29, 349419.71
+,,,,,,,,,,,,,,,,,,,,, , 
+,,,,,,,,,,,,,,,,,,,,, , 
+Totals,,,,,,,,,,,,,,,,,,,,, 580.29, 349419.71

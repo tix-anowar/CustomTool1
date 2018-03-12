@@ -1,0 +1,236 @@
+<!-- Custom styles for this template -->
+<link href="/static/css/condition.css" rel="stylesheet">
+<div class="container">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Trade CSV File</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="uploaded-files">
+                            <% csvFiles.forEach(function(csvFile) { %>
+                                <span class="file-item">
+                                    <%= csvFile %>
+                                    <a href="/files/delete/trade_csv/<%=csvFile%>" class="">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </span>
+
+                            <% }); %>
+                        </div>
+                        <form action="/" method="post" role="form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="filetoupload" id="filetoupload" placeholder="Input...">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Daily Funding Report</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="uploaded-files">
+                            <% dailyFundingReportFiles.forEach(function(dailyFunding) { %>
+                            <span class="file-item">
+                                    <%= dailyFunding %>
+                                <a href="/files/delete/funding_report/<%=dailyFunding%>" class="">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </span>
+
+                            <% }); %>
+                        </div>
+                        <form action="/" method="post" role="form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="filetoupload" id="filetoupload" placeholder="Input...">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Daily Reconciliation Report</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="uploaded-files">
+                            <% dailyReconciliationReportFiles.forEach(function(dailyReconciliation) { %>
+                            <span class="file-item">
+                                    <%= dailyReconciliation %>
+                                <a href="/files/delete/reconciliation_report/<%=dailyReconciliation%>" class="">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </span>
+
+                            <% }); %>
+                        </div>
+                        <form action="/" method="post" role="form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="filetoupload" id="filetoupload" placeholder="Input...">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Exception Report</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="uploaded-files">
+                            <% exceptionReportFiles.forEach(function(exceptionReport) { %>
+                            <span class="file-item">
+                                    <%= exceptionReport %>
+                                <a href="/files/delete/exception_report/<%=exceptionReport%>" class="">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </span>
+
+                            <% }); %>
+                        </div>
+                        <form action="/" method="post" role="form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="filetoupload" id="filetoupload" placeholder="Input...">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Repurchase Settlement File</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="uploaded-files">
+                            <% repurchaseSettlementFiles.forEach(function(repurchaseSettlement) { %>
+                            <span class="file-item">
+                                    <%= repurchaseSettlement %>
+                                <a href="/files/delete/repurchase_settlement/<%=repurchaseSettlement%>" class="">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </span>
+
+                            <% }); %>
+                        </div>
+                        <form action="/" method="post" role="form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="filetoupload" id="filetoupload" placeholder="Input...">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Daily Settlement Report</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="uploaded-files">
+                            <% dailySettlementReportFiles.forEach(function(dailySettlementReport) { %>
+                            <span class="file-item">
+                                    <%= dailySettlementReport %>
+                                <a href="/files/delete/settlement_report/<%=dailySettlementReport%>" class="">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </span>
+
+                            <% }); %>
+                        </div>
+                        <form action="/" method="post" role="form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="filetoupload" id="filetoupload" placeholder="Input...">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Cash Settlement File</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="uploaded-files">
+                            <% cashSettlementFiles.forEach(function(cashSettlement) { %>
+                            <span class="file-item">
+                                    <%= cashSettlement %>
+                                <a href="/files/delete/cash_settlement/<%=cashSettlement%>" class="">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </span>
+
+                            <% }); %>
+                        </div>
+                        <form action="/" method="post" role="form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="filetoupload" id="filetoupload" placeholder="Input...">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Dilution Settlement File</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="uploaded-files">
+                            <% dilutionSettlementFiles.forEach(function(dilutionSettlement) { %>
+                            <span class="file-item">
+                                    <%= dilutionSettlement %>
+                                <a href="/files/delete/dilution_settlement/<%=dilutionSettlement%>" class="">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </span>
+
+                            <% }); %>
+                        </div>
+                        <form action="/" method="post" role="form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="filetoupload" id="filetoupload" placeholder="Input...">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Others</h3>
+                    </div>
+                    <div class="panel-body">
+                        <label>Not Applicable</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+</script>

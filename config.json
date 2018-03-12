@@ -1,0 +1,206 @@
+{
+  "BASE_URL": "http://localhost:3000/",
+  "form": {
+    "username": "rory.creffield@aronova.com",
+    "grant_type": "password",
+    "response_type": "token",
+    "client_id": "runscope",
+    "client_secret": "pUHOrdIhQfRZMhD7NtixIvrbYQfYhFJZOqR+HgFd8Ds=",
+    "password": "P9O0MKg%v@g"
+  },
+  "DATABASE": {
+    "DB_CONFIG": {
+      "host": "localhost",
+      "user": "root",
+      "password": "",
+      "database": "tradeix"
+    },
+    "Trade_Csv": "TradeCsv",
+    "Repurchase_Settlement": "RepurchaseSettlement",
+    "Daily_Funding": "DailyFunding",
+    "Daily_Reconciliation": "Daily Reconciliation",
+    "Exception": "Exception",
+    "Buyer_Settlement": "BuyerSettlement",
+    "Credit_Note": "CreditNote",
+    "Daily_Settlement": "DailySettlement"
+  },
+  "NINE_TAB": {
+    "LEDGER": {
+      "CURRENT_SALES_LEDGER_ON": "CURRENT SALES LEDGER ON ",
+      "HEADERS": {
+        "Limit_Group_ID": "Limit Group ID",
+        "Product_Desc": "Product Desc",
+        "Deal_ID": "Deal ID",
+        "Document_Number": "Document Number",
+        "Buyer_Name": "Buyer Name",
+        "Document_Date": "Document Date",
+        "Document_Type": "Document Type",
+        "Currency": "Currency",
+        "Original_Amount": "Original Amount",
+        "Due_Date": "Due Date",
+        "Days_Overdue": "Days Overdue",
+        "Status": "Status",
+        "Submit_Date": "Submit Date",
+        "Outstanding": "Outstanding",
+        "Remarks": "Remarks",
+        "Transaction_Reference": "Transaction Reference",
+        "Prepay_Option": "Prepay Option",
+        "Prepay_Currency": "Prepay Currency",
+        "Prepay_Amount": "Prepay Amount",
+        "Prepay_Outstanding": "Prepay Outstanding",
+        "Maturity_Date": "Maturity Date",
+        "Avail_Amount": "Avail Amount",
+        "Disc_Charge": "Disc Charge",
+        "OS_Disc_Charge": "O/S Disc Charge",
+        "O_Due_Disc_Charge": "O/Due Disc Charge",
+        "O_S_O_Due_Disc_Charge": "O/S O/Due Disc Charge"
+      }
+    },
+    "Prev_Day_Payments": {
+      "PAYMENTS_PROCESSED_ON": "PAYMENTS PROCESSED ON ",
+      "HEADERS": {
+        "Limit_Group_ID": "Limit Group ID",
+        "Product_Desc": "Product Desc",
+        "Deal_ID": "Deal ID",
+        "Buyer_Name": "Buyer Name",
+        "Currency": "Currency",
+        "Total_Payment_Amount": "Total Payment Amount*",
+        "Value_Date": "Value Date",
+        "Payment_Reference": "Payment Reference",
+        "Document_Number": "Document Number",
+        "Document_Type": "Document Type",
+        "Current_Document_Amount": "Current Document O/S Amount",
+        "Allocated_Amount": "Allocated Amount",
+        "Remaining_Balance": "Remaining Balance",
+        "Allocation_Reference": "Allocation Reference**"
+      },
+      "NOTES": {
+        "Note_Title": "Note:",
+        "Value1": "*Same payment amount will be shown for all the applicable invoices covered by this payment. Payment Amount will be zero for allocation of previously appropriated funds.",
+        "Value2": "**Allocation Reference only applies to pool based clients, else it will be shown as blank.",
+        "Value3": "***Document information may not be available during appropriation of funds. It will be subsequently updated when allocation details are received."
+      }
+    },
+    "Prev_Day_PrePay": {
+      "PREPAYMENT_DONE_ON": "PREPAYMENT DONE ON ",
+      "HEADERS": {
+        "Limit_Group_ID": "Limit Group ID",
+        "Product_Desc": "Product Desc",
+        "Deal_ID": "Deal ID",
+        "Document_Number": "Document Number",
+        "Buyer_Name": "Buyer Name",
+        "Document_Type": "Document Type",
+        "Currency": "Currency",
+        "Due_Date": "Due Date",
+        "Status": "Status",
+        "Outstanding": "Outstanding",
+        "Seq_No": "Seq No",
+        "Post_Date_of_Prepayment": "Post Date of Prepayment",
+        "Value_Date_of_Prepayment": "Value Date of Prepayment",
+        "Maturity_Date": "Maturity Date",
+        "Tenor": "Tenor",
+        "Prepayment_Currency": "Prepayment Currency",
+        "Prepayment_Amt": "Prepayment Amt",
+        "Discount_Rate": "Discount Rate",
+        "Disc_Charge": "Disc Charge**"
+      }
+    },
+    "Other_Charges": {
+      "OTHER_CHARGES_FROM": "OTHER CHARGES FROM ",
+      "HEADERS": {
+        "Limit_Group_ID": "Limit Group ID",
+        "Product_Desc": "Product Desc",
+        "Deal_ID": "Deal ID",
+        "Creation_Date": "Creation Date",
+        "Charge_Type": "Charge Type",
+        "Creation_Ref": "Creation Ref",
+        "Collection_Date": "Collection Date",
+        "Collection_Ref": "Collection Ref",
+        "TxnCCY": "TxnCCY",
+        "TxnAmt": "TxnAmt",
+        "Charge_Ccy": "Charge Ccy",
+        "Charge_Amt": "Charge Amt"
+      }
+    },
+    "Prev_Days_Schedule": {
+      "NEW_DOCUMENTS_SUBMITTED_ON": "NEW DOCUMENTS SUBMITTED ON ",
+      "HEADERS": {
+        "Limit_Group_ID": "Limit Group ID",
+        "Product_Desc": "Product Desc",
+        "Deal_ID": "Deal ID",
+        "Document_Number": "Document Number",
+        "Buyer_Name": "Buyer Name",
+        "Document_Type": "Document Type",
+        "Currency": "Currency",
+        "Original_Amount": "Original Amount",
+        "Document_Date": "Document Date",
+        "Due_Date": "Due Date",
+        "Bank_Reference": "Bank Reference",
+        "Remarks": "Remarks*"
+      },
+      "NOTES": {
+        "Note_Title": "Note:",
+        "Value1": "* Disapproved invoices will be marked under the 'Remarks' column"
+      }
+    }
+  },
+  "CONSTANT": {
+    "NetworkRate": 1.34,
+    "ServicerRate": 2.23,
+    "TransactionRate": 3.57,
+    "InsuranceRate": 8.9,
+    "BaseRate": 100,
+    "Margin": 50,
+    "DocType": "300",
+    "Currency": "GBP",
+    "RecordType": "D",
+    "SenderId": "100415290",
+    "BuyerId": "Albertsons (B1)",
+    "BuyerName": "Albertsons (B1)",
+    "SupplierName": "DHL",
+    "ProductCode": "RSRV",
+    "DProductCode": "RSRV01",
+    "FinalPayment": "Y",
+    "Deviation": 0.01,
+    "Funder": "Standard Chartered Bank",
+    "FunderRef": "Standard Chartered",
+    "REFERENCE": "REFERENCE",
+    "SettlementFrom": "DHL",
+    "SettlementTo": "Albertsons (B1)"
+  },
+  "MAIL": {
+    "Transport_Options": {
+      "service": "gmail",
+      "secure": false,
+      "port": 25,
+      "auth": {
+        "user": "",
+        "pass": ""
+      },
+      "tls": {
+        "rejectUnauthorized": false
+      }
+    },
+    "Mail_Options": {
+      "from": "",
+      "to": "",
+      "subject": "",
+      "html": "",
+      "attachments": [
+        {
+          "path": ""
+        }
+      ]
+    }
+  },
+  "FILE_PATH": {
+    "trade_csv": "/src/actual_files/trade_csv/",
+    "exception_report": "/src/actual_files/exception_report/",
+    "funding_report": "/src/actual_files/daily_funding_report/",
+    "reconciliation_report": "/src/actual_files/daily_reconsilation_report/",
+    "settlement_report": "/src/actual_files/daily_settlement_report/",
+    "cash_settlement": "/src/actual_files/cash_settlement/",
+    "dilution_settlement": "/src/actual_files/dilution_settlement/",
+    "repurchase_settlement": "/src/actual_files/repurchase_settlement/"
+  }
+}

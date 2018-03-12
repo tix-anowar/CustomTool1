@@ -1,0 +1,4 @@
+Program ID,Invoice Number,Settlement ID,Settlement Date,Settlement From,Settlement To,Settlement Currency,Settlement Type,Settlement Amount, Funded Remaining
+1,INVUAT-F18,2041,2018-02-05T00:00:00Z,DHL,Albertsons (B1),GBP,Dilution,50000.00, 350000.0000
+1,INVUAT-F18,2042,2018-02-05T00:00:00Z,DHL,Albertsons (B1),GBP,CashAppliction,100000.00, 350000.0000
+1,INVUAT-F18,2043,2018-02-05T00:00:00Z,DHL,Albertsons (B1),GBP,Repurchase,200000.00, 350000.0000

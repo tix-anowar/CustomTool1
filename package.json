@@ -1,0 +1,46 @@
+{
+  "name": "fileupload",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "date-time": "^2.1.0",
+    "ejs": "^2.5.7",
+    "excel": "^0.1.7",
+    "express": "^4.16.2",
+    "express-ejs-layouts": "^2.3.1",
+    "file-system": "^2.2.2",
+    "formidable": "^1.1.1",
+    "html-pdf": "^2.2.0",
+    "jsreport": "^1.9.2",
+    "jsreport-core": "^1.5.1",
+    "jsreport-ejs": "^1.0.4",
+    "jsreport-jsrender": "^1.0.2",
+    "jsreport-phantom-pdf": "^1.4.6",
+    "moment": "^2.19.1",
+    "msexcel-builder": "0.0.2",
+    "mysql": "^2.15.0",
+    "nodemailer": "^4.4.2",
+    "phantomjs": "^2.1.7",
+    "request": "^2.83.0",
+    "sanitize-filename": "^1.6.1",
+    "split": "^1.0.1",
+    "sync-request": "^4.1.0",
+    "typescript": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/sawon_hasan/testingtool.git"
+  },
+  "homepage": "https://bitbucket.org/sawon_hasan/testingtool#readme",
+  "devDependencies": {
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
+  },
+  "description": ""
+}

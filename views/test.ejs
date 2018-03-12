@@ -1,0 +1,59 @@
+<!-- Custom styles for this template -->
+<link href="/static/css/manage9tab.css" rel="stylesheet">
+<div class="container">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Test</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div action="validation" method="post" class="report-validation-form" role="form"
+                              enctype="multipart/form-data">
+                            <legend>All Files and Reports Validation</legend>
+
+                            <div class="form-group">
+                                <label for="filetoupload">Network Invoice Uid</label>
+                                <input type="text" class="form-control NIUID" name="NIUID" id="NIUID"
+                                       placeholder="Input Network Invoice Uid ...">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary validate-btn">Validate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var reportValidationForm = $(".report-validation-form");
+        var validateBtn = reportValidationForm.find(".validate-btn");
+        validateBtn.on("click", function () {
+            waitingDialog.show('Validating report and Generating Test Result');
+            $.ajax({
+                url: 'http://localhost:3000/validation',
+                method: 'POST',
+                data: {NIUID: reportValidationForm.find(".NIUID").val()},
+                dataType: 'html',
+                success: function (data) {
+                    setTimeout(function () {
+                        $.ajax({
+                            url: 'http://localhost:3000/reports',
+                            method: 'GET',
+                            dataType: 'html',
+                            success: function (data) {
+                                $("html")[0].innerHTML = data;
+                                waitingDialog.hide();
+                            }
+                        });
+                    }, 5000);
+                }
+            });
+
+        });
+    })
+</script>

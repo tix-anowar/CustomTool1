@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Test Reports</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <style>
+        body {
+            padding-top: 5rem;
+        }
+
+        .starter-template {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue';
+            color: #555;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box .company-logo-wrapper {
+            background-color: #555;
+            width: 130px;
+            height: 40px;
+            padding-top: 10px;
+            border-radius: 8px;
+        }
+
+        .invoice-box .company-logo {
+            background: rgba(0, 0, 0, 0);/* url("http://jsreport.net/img/js-logo.png") no-repeat scroll 0 0;*/
+            color: #FFFFFF;
+            font-weight:bolder;
+            text-align: center;
+            font-size: 14px;
+            margin: auto;
+            width: 120px;
+            height: 40px
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="starter-template">
+        <div class="invoice-box">
+            <table>
+                <tr>
+                    <td class="title">
+                        <div class="company-logo-wrapper">
+                            <div class='company-logo'>Test Results</div>
+                        </div>
+                    </td>
+                    <td style="float: right;">
+                        Report Generated: <%= now %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invoice-box">
+            <h3>Trade CSV File Test Report</h3>
+            <table cellpadding="0" cellspacing="0">
+                <tr class="heading ">
+                    <td>
+                        Field
+                    </td>
+                    <td>
+                        Actual
+                    </td>
+                    <td>
+                        Expected
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+                <% TradeCsvList.forEach(function(TradeCsv) { %>
+                <tr class="item">
+                    <td>
+                        <%= TradeCsv.field %>
+                    </td>
+                    <td>
+                        <%= TradeCsv.actual %>
+                    </td>
+                    <td>
+                        <%= TradeCsv.expected %>
+                    </td>
+                    <td class="<%= TradeCsv.status === 'Passed' ? "text-success" : "text-danger" %>">
+                        <%= TradeCsv.status %>
+                    </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="4">
+                        Total: <span class="text-primary"><%= TradeCsvList.length %></span>, Passed: <span
+                                class="text-success"><%= TradeCsvList.filter(object => object.status === 'Passed').length %></span>,
+                        Failed: <span
+                                class="text-danger"><%= (TradeCsvList.length - TradeCsvList.filter(object => object.status === 'Passed').length) %></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invoice-box">
+            <h3>Daily Funding Test Report</h3>
+            <table cellpadding="0" cellspacing="0">
+                <tr class="heading ">
+                    <td>
+                        Field
+                    </td>
+                    <td>
+                        Actual
+                    </td>
+                    <td>
+                        Expected
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+                <% DailyFundingList.forEach(function(dailyFunding) { %>
+                <tr class="item">
+                    <td>
+                        <%= dailyFunding.field %>
+                    </td>
+                    <td>
+                        <%= dailyFunding.actual %>
+                    </td>
+                    <td>
+                        <%= dailyFunding.expected %>
+                    </td>
+                    <td class="<%= dailyFunding.status === 'Passed' ? "text-success" : "text-danger" %>">
+                        <%= dailyFunding.status %>
+                    </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="4">
+                        Total: <span class="text-primary"><%= DailyFundingList.length %></span>, Passed: <span
+                                class="text-success"><%= DailyFundingList.filter(object => object.status === 'Passed').length %></span>,
+                        Failed: <span
+                                class="text-danger"><%= (DailyFundingList.length - DailyFundingList.filter(object => object.status === 'Passed').length) %></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invoice-box">
+            <h3>Daily Reconciliation Test Report</h3>
+            <table cellpadding="0" cellspacing="0">
+                <tr class="heading ">
+                    <td>
+                        Field
+                    </td>
+                    <td>
+                        Actual
+                    </td>
+                    <td>
+                        Expected
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+                <% DailyReconciliationList.forEach(function(dailyReconciliation) { %>
+                <tr class="item">
+                    <td>
+                        <%= dailyReconciliation.field %>
+                    </td>
+                    <td>
+                        <%= dailyReconciliation.actual %>
+                    </td>
+                    <td>
+                        <%= dailyReconciliation.expected %>
+                    </td>
+                    <td class="<%= dailyReconciliation.status === 'Passed' ? "text-success" : "text-danger" %>">
+                        <%= dailyReconciliation.status %>
+                    </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="4">
+                        Total: <span class="text-primary"><%= DailyReconciliationList.length %></span>, Passed: <span
+                                class="text-success"><%= DailyReconciliationList.filter(object => object.status === 'Passed').length %></span>,
+                        Failed: <span
+                                class="text-danger"><%= (DailyReconciliationList.length - DailyReconciliationList.filter(object => object.status === 'Passed').length) %></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invoice-box">
+            <h3>Repurchase Settlement Test Report</h3>
+            <table cellpadding="0" cellspacing="0">
+                <tr class="heading ">
+                    <td>
+                        Field
+                    </td>
+                    <td>
+                        Actual
+                    </td>
+                    <td>
+                        Expected
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+                <% RepurchaseSettlementList.forEach(function(repurchaseSettlement) { %>
+                <tr class="item">
+                    <td>
+                        <%= repurchaseSettlement.field %>
+                    </td>
+                    <td>
+                        <%= repurchaseSettlement.actual %>
+                    </td>
+                    <td>
+                        <%= repurchaseSettlement.expected %>
+                    </td>
+                    <td class="<%= repurchaseSettlement.status === 'Passed' ? "text-success" : "text-danger" %>">
+                        <%= repurchaseSettlement.status %>
+                    </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="4">
+                        Total: <span class="text-primary"><%= RepurchaseSettlementList.length %></span>, Passed: <span
+                                class="text-success"><%= RepurchaseSettlementList.filter(object => object.status === 'Passed').length %></span>,
+                        Failed: <span
+                                class="text-danger"><%= (RepurchaseSettlementList.length - RepurchaseSettlementList.filter(object => object.status === 'Passed').length) %></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invoice-box">
+            <h3>Cash Settlement Test Report</h3>
+            <table cellpadding="0" cellspacing="0">
+                <tr class="heading ">
+                    <td>
+                        Field
+                    </td>
+                    <td>
+                        Actual
+                    </td>
+                    <td>
+                        Expected
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+                <% CashSettlementList.forEach(function(cashSettlement) { %>
+                <tr class="item">
+                    <td>
+                        <%= cashSettlement.field %>
+                    </td>
+                    <td>
+                        <%= cashSettlement.actual %>
+                    </td>
+                    <td>
+                        <%= cashSettlement.expected %>
+                    </td>
+                    <td class="<%= cashSettlement.status === 'Passed' ? "text-success" : "text-danger" %>">
+                        <%= cashSettlement.status %>
+                    </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="4">
+                        Total: <span class="text-primary"><%= CashSettlementList.length %></span>, Passed: <span
+                                class="text-success"><%= CashSettlementList.filter(object => object.status === 'Passed').length %></span>,
+                        Failed: <span
+                                class="text-danger"><%= (CashSettlementList.length - CashSettlementList.filter(object => object.status === 'Passed').length) %></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invoice-box">
+            <h3>Daily Settlement Test Report</h3>
+            <table cellpadding="0" cellspacing="0">
+                <tr class="heading ">
+                    <td>
+                        Field
+                    </td>
+                    <td>
+                        Actual
+                    </td>
+                    <td>
+                        Expected
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+                <% DailySettlementList.forEach(function(dailySettlement) { %>
+                <tr class="item">
+                    <td>
+                        <%= dailySettlement.field %>
+                    </td>
+                    <td>
+                        <%= dailySettlement.actual %>
+                    </td>
+                    <td>
+                        <%= dailySettlement.expected %>
+                    </td>
+                    <td class="<%= dailySettlement.status === 'Passed' ? "text-success" : "text-danger" %>">
+                        <%= dailySettlement.status %>
+                    </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="4">
+                        Total: <span class="text-primary"><%= DailySettlementList.length %></span>, Passed: <span
+                                class="text-success"><%= DailySettlementList.filter(object => object.status === 'Passed').length %></span>,
+                        Failed: <span
+                                class="text-danger"><%= (DailySettlementList.length - DailySettlementList.filter(object => object.status === 'Passed').length) %></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invoice-box">
+            <h3>Dilution Settlement Test Report</h3>
+            <table cellpadding="0" cellspacing="0">
+                <tr class="heading ">
+                    <td>
+                        Field
+                    </td>
+                    <td>
+                        Actual
+                    </td>
+                    <td>
+                        Expected
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+                <% DilutionSettlementList.forEach(function(dilutionSettlement) { %>
+                <tr class="item">
+                    <td>
+                        <%= dilutionSettlement.field %>
+                    </td>
+                    <td>
+                        <%= dilutionSettlement.actual %>
+                    </td>
+                    <td>
+                        <%= dilutionSettlement.expected %>
+                    </td>
+                    <td class="<%= dilutionSettlement.status === 'Passed' ? "text-success" : "text-danger" %>">
+                        <%= dilutionSettlement.status %>
+                    </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="4">
+                        Total: <span class="text-primary"><%= DilutionSettlementList.length %></span>, Passed: <span
+                                class="text-success"><%= DilutionSettlementList.filter(object => object.status === 'Passed').length %></span>,
+                        Failed: <span
+                                class="text-danger"><%= (DilutionSettlementList.length - DilutionSettlementList.filter(object => object.status === 'Passed').length) %></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invoice-box">
+            <h3>Exception Report Test Report</h3>
+            <table cellpadding="0" cellspacing="0">
+                <tr class="heading ">
+                    <td>
+                        Field
+                    </td>
+                    <td>
+                        Actual
+                    </td>
+                    <td>
+                        Expected
+                    </td>
+                    <td>
+                        Suggested
+                    </td>
+                    <td>
+                        Status
+                    </td>
+                </tr>
+                <% ExceptionReportList.forEach(function(exceptionReport) { %>
+                <tr class="item">
+                    <td>
+                        <%= exceptionReport.field %>
+                    </td>
+                    <td>
+                        <%= exceptionReport.actual %>
+                    </td>
+                    <td>
+                        <%= exceptionReport.expected.split(",")[0] %>
+                    </td>
+                    <td>
+                        <%= exceptionReport.expected.split(",")[1] %>
+                    </td>
+                    <td class="<%= exceptionReport.status === 'Passed' ? "text-success" : "text-danger" %>">
+                        <%= exceptionReport.status %>
+                    </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="4">
+                        Total: <span class="text-primary"><%= ExceptionReportList.length %></span>, Passed: <span
+                                class="text-success"><%= ExceptionReportList.filter(object => object.status === 'Passed').length %></span>,
+                        Failed: <span
+                                class="text-danger"><%= (ExceptionReportList.length - ExceptionReportList.filter(object => object.status === 'Passed').length) %></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+<!-- Holder.js for placeholder images -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+</body>
+</html>
